@@ -1,0 +1,36 @@
+<div class="heading">
+    <h2>Welcome to ShopinKart</h2>
+</div>
+
+<div class="loginsignupcontainer">
+    <form *ngIf="activeForm == 'register'" (ngSubmit)="registerForm()">
+        <h2>REGISTER</h2>
+        <div class="form-group">
+            <input type="text" name="name" [(ngModel)]="registerObj.name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" [(ngModel)]="registerObj.email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" [(ngModel)]="registerObj.password" placeholder="Password" required>
+        </div>
+        <button type="submit">Register</button>
+        <p (click)="toggleForm('login')">
+            Already have an account? <span class="highlighted">LOGIN</span>
+        </p>
+    </form>
+
+    <form *ngIf="activeForm == 'login'">
+        <h2>LOGIN</h2>
+        <div class="form-group">
+            <input type="email" name="email" [(ngModel)]="loginObj.email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password"  [(ngModel)]="loginObj.password" placeholder="Password" required>
+        </div>
+        <button type="submit"(click)="loginForm()">LOGIN</button>
+        <p (click)="toggleForm('register')">
+            Don't have an account? <span class="highlighted">REGISTER</span>
+        </p>
+    </form>
+</div>

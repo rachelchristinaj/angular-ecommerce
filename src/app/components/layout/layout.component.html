@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <!-- Navbar brand (always visible) -->
+    <a class="navbar-brand" href="#">ShopKart</a>
+
+    <!-- Navbar toggler for small screens -->
+    <button class="navbar-toggler" (click)="isNavbarCollapsed = !isNavbarCollapsed" type="button"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Search form (always visible) -->
+    <form class="d-flex me-auto" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+    <!-- Collapsible content (navbar links) -->
+    <div class="collapse navbar-collapse" [ngClass]="{'collapse': isNavbarCollapsed}">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+
+      <!-- Right-aligned buttons -->
+      <ul class="navbar-nav ms-auto">
+       
+        <li class="nav-item">
+          <button class="btn btn-success me-2">
+            <span class="glyphicon glyphicon-user"></span> Sign Up
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-danger" (click)="onLogOut()">
+            <span class="glyphicon glyphicon-log-in"></span> LogOut
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+<router-outlet></router-outlet>
+</div>
