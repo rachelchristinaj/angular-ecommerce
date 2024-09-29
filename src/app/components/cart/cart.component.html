@@ -1,0 +1,33 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-semibold mb-6"><span class="border-b-2 border-b-black">Cart</span></h1>
+    <div class="w-[70%] mx-auto">
+        <div *ngIf="isLoading" class="text-center text-gray-600 loader mx-auto">
+        </div>
+      <div class="md:col-span-2 bg-white p-4 shadow-md rounded-lg " *ngIf="cartProducts.length >0"  >
+        <div class="hidden md:flex items-center justify-between border-b pb-2 mb-4">
+          <span class="text-gray-500 w-1/4">Products</span>
+          <span class="text-gray-500 w-1/4 text-center">Price</span>
+          <span class="text-gray-500 w-1/4 text-center">Quantity</span>
+          <span class="text-gray-500 w-1/4 text-center">Subtotal</span>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-between py-2 border-b" *ngFor="let product of cartProducts">
+          <div class="flex items-center w-full md:w-1/4 mb-2 md:mb-0">
+            <img [src]="product.image" alt="{{product.title}}" class="w-16 h-20 rounded-lg mr-4">
+            <div>
+              <p class="font-semibold">{{product.title}}</p>
+            </div>
+          </div>
+          <span class="w-full md:w-1/4 text-center">{{product.price | currency}}</span>
+          <div class="flex items-center justify-center w-full md:w-1/4 border rounded-lg px-3 py-1">
+            <button class="text-xl" (click)="decrement(product)">-</button>
+            <input type="number" [(ngModel)]="product.quantity" disabled="" class="w-12 text-center bg-transparent mx-2">
+            <button class="text-xl" (click)="increment(product)">+</button>
+          </div>
+          <span class="w-full md:w-1/4 text-center">{{product.price * product.quantity | currency}}</span>
+          <button class="text-red-500" (click)="deleteProduct(product.id)"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  

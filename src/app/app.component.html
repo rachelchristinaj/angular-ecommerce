@@ -1,0 +1,12 @@
+<div class="w-full h-screen flex flex-col justify-between">
+   <div class="fixed w-full" [ngClass]="{'scrolled':isScrolled}">
+    <app-header *ngIf="!hideHeaderFooter" ></app-header>
+   </div>
+  
+    <div class="flex-grow mt-28 md:mt-16">
+      <router-outlet></router-outlet>
+    </div>
+    
+    <app-footer *ngIf="!hideHeaderFooter"></app-footer>
+    </div>
+  

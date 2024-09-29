@@ -1,0 +1,54 @@
+<div class="flex flex-col md:flex-row min-h-full overflow-hidden">
+    <!-- Left side: Image -->
+    <div class="md:w-1/2 bg-contain bg-center bg-no-repeat h-64 md:h-auto" style="background-image: url('../../../assets/bg-img.jpg');"></div>
+  
+    <!-- Right side: Login form -->
+    <div class="flex flex-col items-center justify-center w-full md:w-1/2 bg-white p-8">
+      <div class="w-full max-w-md">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Welcome 👋</h2>
+        <p class="text-gray-600 mb-6">Please login here</p>
+        <form [formGroup]="login" (ngSubmit)="onSubmit()">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+              User Name
+            </label>
+            <input formControlName="username" 
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                   id="username" 
+                   type="text" 
+                   placeholder="Enter username"
+                   autocomplete="username">
+            <small class="text-red-500" *ngIf="login.get('username')?.touched && login.get('username')?.errors">UserName required</small>
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+              Password
+            </label>
+            <input formControlName="password" 
+                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                   id="password" 
+                   type="password" 
+                   placeholder="******************"
+                   autocomplete="current-password">
+            <small class="text-red-500" *ngIf="login.get('password')?.touched && login.get('password')?.errors">password required</small>
+          </div>
+          <div class="flex items-center justify-between mb-4">
+            <label class="flex items-center">
+              <input class="mr-2 leading-tight" type="checkbox">
+              <span class="text-sm text-gray-600">Remember Me</span>
+            </label>
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+              Forgot Password?
+            </a>
+          </div>
+          <div class="mb-6 flex flex-col justify-center items-center gap-4">
+            <button class="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
+              Login
+            </button>
+            <span class="text-red-500 mx-auto">{{errorMsg}}</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
