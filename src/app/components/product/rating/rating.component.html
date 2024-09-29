@@ -1,0 +1,12 @@
+<div class="star-container">
+    <ng-container *ngFor="let i of [].constructor(fullStars); let index = index">
+      <i class="fas fa-star text-red-500"></i>
+    </ng-container>
+    <ng-container *ngIf="halfStar">
+      <i class="fas fa-star-half-alt text-red-500"></i>
+    </ng-container>
+    <ng-container *ngFor="let i of [].constructor(emptyStars); let index = index">
+      <i class="far fa-star text-red-500"></i>
+    </ng-container>
+</div>
+  

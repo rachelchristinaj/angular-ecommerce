@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "ShopKart": {
+=======
+    "ShopEase": {
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -11,11 +15,19 @@
       "prefix": "app",
       "architect": {
         "build": {
+<<<<<<< HEAD
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/shop-kart",
             "index": "src/index.html",
             "browser": "src/main.ts",
+=======
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/shop-ease",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
             "polyfills": [
               "zone.js"
             ],
@@ -25,6 +37,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
               "src/styles.css"
             ],
             "scripts": []
@@ -46,14 +62,24 @@
               "outputHashing": "all"
             },
             "development": {
+<<<<<<< HEAD
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+=======
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
+<<<<<<< HEAD
           "options": {
             "proxyConfig": "src/proxyConfig.json"
           },
@@ -64,6 +90,15 @@
             },
             "development": {
               "buildTarget": "ShopKart:build:development"
+=======
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ShopEase:build:production"
+            },
+            "development": {
+              "browserTarget": "ShopEase:build:development"
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +106,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "buildTarget": "ShopKart:build"
+=======
+            "browserTarget": "ShopEase:build"
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
           }
         },
         "test": {
@@ -87,6 +126,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
               "src/styles.css"
             ],
             "scripts": []
@@ -95,4 +138,8 @@
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67

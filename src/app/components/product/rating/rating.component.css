@@ -1,0 +1,36 @@
+.star-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    position: relative;
+    width: 1em;
+    font-size: 2em;
+    line-height: 1em;
+    margin-right: 0.2em;
+  }
+  
+  .star i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  
+  .star i.far {
+    z-index: 1;
+  }
+  
+  .star i.fas {
+    z-index: 2;
+  }
+  
+  .star.full i.fas {
+    width: 100%;
+  }
+  
+  .star.partial i.fas {
+    width: 50%; /* Adjust this to show the partial fill properly */
+  }
+  

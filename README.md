@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # ShopKart
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+=======
+# ShopEase
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+>>>>>>> e10fa36a663cea90344f4716f75505fa696f8f67
 
 ## Development server
 
